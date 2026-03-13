@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap');
+@tailwind components;
+@tailwind utilities;
+
+/* Top of your CSS file */
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../**/*.vue';
+@variant dark (&:where(.dark, .dark *));
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Segoe UI Symbol', 'Noto Color Emoji';
+  
+  --color-primary: #3b82f6;
+  --color-brand-blue: #3b82f6;
+  --color-dark-bg: #0f172a;
+
+  /* 1. Define the animation name and timing */
+  --animate-scroll: scroll 30s linear infinite;
+}
+/* body {
+    background-color: red !important;
+} */
+/* Ensure smooth background transitions when toggling */
+html {
+  transition: background-color 0.5s ease-in-out;
+}
+
+
+ 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+body{
+font-family: 'Poppins', sans-serif;
+}
